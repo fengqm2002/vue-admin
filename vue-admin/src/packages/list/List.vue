@@ -52,6 +52,10 @@ export default {
     }
   }
   .list {
+    height: 500rem;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
     .list-item {
       height: 40px;
       width: 100%;

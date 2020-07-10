@@ -43,7 +43,7 @@ export default {
     justify-content: space-between;
     height: 2rem;
     line-height: 2rem;
-    font-size: 0.8rem;
+    font-size: 1.4rem;
     .title {
       overflow: hidden;
       text-overflow: ellipsis;

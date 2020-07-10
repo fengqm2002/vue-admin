@@ -4,7 +4,7 @@ import Index from "../views/Index.vue";
 
 const routes = [
 {
-  path: '/Home',
+  path: '/',
   name: 'Home',
   component: Home
 },
@@ -17,9 +17,34 @@ const routes = [
   component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
 },
 {
-  path: '/',
+  path: '/index',
   name: 'Index',
   component: Index
+},
+{
+  path: '/playList',
+  name: 'PlayList',
+  component: () => import(/* webpackChunkName: "PlayList" */ '../components/playList/playList.vue')
+},
+{
+  path: '/recommend',
+  name: 'Recommend',
+  component: () => import(/* webpackChunkName: "Recommend" */ '../components/recommend/Recommend.vue')
+},
+{
+  path: '/userList',
+  name: 'UserList',
+  component: () => import(/* webpackChunkName: "UserList" */ '../components/userList/UserList.vue')
+},
+{
+  path: '/search',
+  name: 'Search',
+  component: () => import(/* webpackChunkName: "Search" */ '../components/search/Search.vue')
+},
+{
+  path: '/historyList',
+  name: 'HistoryList',
+  component: () => import(/* webpackChunkName: "HistoryList" */ '../components/historyList/HistoryList.vue')
 }
 ]
 
