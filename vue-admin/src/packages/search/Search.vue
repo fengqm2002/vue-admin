@@ -80,12 +80,12 @@ export default {
     color: #999;
     margin-left: 0.2rem;
     padding: 0 0.2rem;
-    background: #fff;
+    background: #eee;
     border-top-left-radius: 0.4rem;
     border-bottom-left-radius: 0.4rem;
   }
   .icon-close-fill {
-    background: #fff;
+    background: #eee;
     border-top-right-radius: 0.4rem;
     border-bottom-right-radius: 0.4rem;
     width: 1.5rem;
@@ -110,6 +110,7 @@ export default {
     outline: none;
     -webkit-appearance: none;
     background: #fff;
+    color: #777;
     border: 0;
     height: 1.5rem;
     width: 100%;

@@ -2,10 +2,10 @@
   <div class="scroll-list">
     <div class="header" v-if="header.length">
       <div
-        class="`header-item-${i}`"
+        class="header-item"
         v-for="(headerItem, i) in header"
         :key="`${headerItem}${i}`"
-        v-html="`${headerItem}${i}`"
+        v-html="headerItem"
       />
     </div>
     <div class="list" v-if="list.length">
@@ -40,49 +40,19 @@ export default {
 
 <style lang="scss" scoped>
 @import "@/assets/css/index.scss";
-@import "../css/index.scss";
+@import '../css/index.scss';
 .scroll-list {
-  // width: 100%;
-  // height: 100%;
-  // margin: 0px;
-  // padding: 0px;
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
   .header {
-    // height: 40px;
-    // background-color: #555;
-    line-height: 30px;
-    border-bottom: 1px solid $list_head_line_color;
-    color: $text_color_active;
-    // display: flex;
-    // flex-wrap: wrap;
-    .header-item-0 {
-      float: left;
-      width: 40%;
-      height: auto;
-      border: 1px solid red;
-      // flex: 1 1 150px; /*  flex-grow: 1 ，表示自动延展到最大宽度 */
-      // flex: 1 1 100px; /*  No stretching: */
-      margin: 5px;
-      text-align: center;
-    }
-    .header-item-1 {
+    height: 40px;
+    background-color: #555;
+    line-height: 40px;
+    .header-item {
       float: left;
       width: 30%;
-      height: auto;
-      border: 1px solid red;
-      // flex: 1 1 150px; /*  flex-grow: 1 ，表示自动延展到最大宽度 */
-      // flex: 1 1 100px; /*  No stretching: */
-      margin: 5px;
-      text-align: center;
-    }
-    .header-item-2 {
-      float: left;
-      width: 20%;
-      height: auto;
-      border: 1px solid red;
-      // flex: 1 1 150px; /*  flex-grow: 1 ，表示自动延展到最大宽度 */
-      // flex: 1 1 100px; /*  No stretching: */
-      margin: 5px;
-      text-align: center;
     }
   }
   .list {

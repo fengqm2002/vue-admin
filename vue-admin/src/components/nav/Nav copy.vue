@@ -1,18 +1,18 @@
 <template>
   <div class="nav-page">
-    <router-link to="/music/playlist" tag="span">
+    <router-link to="playlist" tag="nav">
       <span>正在播放</span>
     </router-link>
-    <router-link to="/music/recommend" tag="span">
+    <router-link to="recommend" tag="nav">
       <span>推荐</span>
     </router-link>
-    <router-link to="/music/search" tag="span">
+    <router-link to="search" tag="nav">
       <span>搜索</span>
     </router-link>
-    <router-link class="none-414" to="/music/userList" tag="span">
+    <router-link class="none-414" to="userList" tag="nav">
       <span>我的歌单</span>
     </router-link>
-    <router-link to="/music/historyList" tag="span">
+    <router-link to="historyList" tag="nav">
       <span>我听过的</span>
     </router-link>
   </div>
@@ -25,27 +25,31 @@ export default {};
 <style lang="scss" scoped>
 @import "@/assets/css/index.scss";
 .nav-page {
+  display: flex;
   width: 100%;
-  height: 60px;
-  font-size: 0;
-  // background: $load_bg_color;
-  span {
-    display: inline-block;
-    height: 40px;
-    box-sizing: border-box;
-    margin-right: 8px;
-    padding: 0 23px;
-    border: 1px solid $btn_color;
+  height: 2rem;
+  position: relative;
+  z-index: 100;
+  background: $header_bg_color;
+  nav {
+    float: left;
+    height: 100%;
+    max-width: 5rem;
+    line-height: 1rem;
+    text-align: center;
     color: $btn_color;
-    border-radius: 2px;
-    font-size: 14px;
-    line-height: 40px;
-    overflow: hidden;
-    cursor: pointer;
-    &:hover,
-    &.active {
-      border-color: $btn_color_active;
+    font-size: $font_size_medium;
+    padding: 0 .5rem;
+    &:hover {
       color: $btn_color_active;
+      border: none;
+    }
+  }
+  .router-link-active {
+    span {
+      color: #ffcd32;
+      border-bottom: 1px solid #ffcd32;
+      padding-bottom: 0.1rem;
     }
   }
   @media (max-width: 768px) {
