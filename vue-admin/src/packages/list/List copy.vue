@@ -60,12 +60,14 @@ export default {
     overflow-x: hidden;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
+    
     .list-item {
       height: 40px;
       width: 100%;
       background-color: #222;
       line-height: 40px;
       display: inline-block;
+      
       span {
         height: 30px;
         width: 200px;

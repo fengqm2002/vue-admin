@@ -66,6 +66,14 @@ git pull -p
 git fetch --prune origin 
 git fetch -p
 ```  
++  git pull <远程主机名> <远程分支名>:<本地分支名>
+```   
+git pull origin vue-component-V1.0.0-20200709
+或：
+git fetch origin vue-component-V1.0.0-20200709:vue-component-V1.0.0-20200709
+git merge vue-component-V1.0.0-20200709
+```   
++ 相比起来git fetch更安全一些，因为在merge前，我们可以查看更新情况，然后再决定是否合并。
 
 # git 更新远程分支列表
 ```  
@@ -74,4 +82,11 @@ git remote update origin --prune
 或
 
 git remote update origin -p
+```   
+
+# Git pull 强制拉取并覆盖本地代码
+```   
+git fetch --all
+git reset --hard origin/master
+git pull
 ```   

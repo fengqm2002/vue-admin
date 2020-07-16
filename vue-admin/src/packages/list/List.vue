@@ -2,17 +2,17 @@
   <div class="scroll-list">
     <div class="header" v-if="header.length">
       <div
-        class="`header-item-${i}`"
+        class="header-item"
         v-for="(headerItem, i) in header"
         :key="`${headerItem}${i}`"
-        v-html="`${headerItem}${i}`"
+        v-html="headerItem"
       />
     </div>
     <div class="list" v-if="list.length">
       <div class="list-item" v-for="(listItem, i) in list" :key="`${listItem}${i}`">
-        <span>{{listItem.name}}</span>
+        <span class="song">{{listItem.name}}</span>
         <span>{{listItem.artists[0].name}}</span>
-        <hr />
+        <span>{{listItem.album.name}}</span>
       </div>
     </div>
   </div>
@@ -42,69 +42,55 @@ export default {
 @import "@/assets/css/index.scss";
 @import "../css/index.scss";
 .scroll-list {
-  // width: 100%;
-  // height: 100%;
-  // margin: 0px;
-  // padding: 0px;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  // color: #fff;
+  @mixin text {
+    // padding: 0 10px;
+    //  padding-right: 80px;
+    box-sizing: border-box;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
   .header {
-    // height: 40px;
-    // background-color: #555;
+    display: flex;
+    flex-direction: row;
+    font-size: 15px;
     line-height: 30px;
-    border-bottom: 1px solid $list_head_line_color;
-    color: $text_color_active;
-    // display: flex;
-    // flex-wrap: wrap;
-    .header-item-0 {
-      float: left;
-      width: 40%;
-      height: auto;
-      border: 1px solid red;
-      // flex: 1 1 150px; /*  flex-grow: 1 ，表示自动延展到最大宽度 */
-      // flex: 1 1 100px; /*  No stretching: */
-      margin: 5px;
-      text-align: center;
-    }
-    .header-item-1 {
-      float: left;
+    border-bottom: 1px solid $list_item_line_color;
+    .header-item {
+      @include text;
       width: 30%;
-      height: auto;
-      border: 1px solid red;
-      // flex: 1 1 150px; /*  flex-grow: 1 ，表示自动延展到最大宽度 */
-      // flex: 1 1 100px; /*  No stretching: */
-      margin: 5px;
       text-align: center;
-    }
-    .header-item-2 {
-      float: left;
-      width: 20%;
-      height: auto;
-      border: 1px solid red;
-      // flex: 1 1 150px; /*  flex-grow: 1 ，表示自动延展到最大宽度 */
-      // flex: 1 1 100px; /*  No stretching: */
-      margin: 5px;
-      text-align: center;
+      transition: all 0.3s;
     }
   }
   .list {
-    height: 500px;
+    overflow: hidden;
+    line-height: 30px;
+    width: 100%;
+    height: 460px;
     overflow-x: hidden;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     .list-item {
-      height: 40px;
-      width: 100%;
-      background-color: #222;
-      line-height: 40px;
-      display: inline-block;
-      span {
-        height: 30px;
-        width: 200px;
-        line-height: 30px;
-        // text-overflow: ellipsis;
-        overflow: hidden;
-        padding: 10px;
-        text-align: left;
-      }
+      display: flex;
+      font-size: 14px;
+      transition: all 0.3s;
+      border-bottom: 1px solid $list_item_line_color;
+    }
+    .song {
+      width: 50%;
+    }
+    span {
+      @include text;
+      width: 25%;
+    }
+    .index {
+      border-radius: 3px;
+      padding: 0px 3px;
     }
   }
 }
